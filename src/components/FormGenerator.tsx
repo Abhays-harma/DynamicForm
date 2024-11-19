@@ -160,6 +160,20 @@ const FormPreview: React.FC<FormPreviewProps> = ({ schema }) => {
                       />
                     );
                   }
+                  if (field.type === 'url') {
+                    return (
+                      <input
+                        {...controllerField}
+                        type="url"
+                        id={field.id}
+                        placeholder={field.placeholder}
+                        className={`block px-2 w-full rounded-md shadow-sm focus:ring-opacity-50 ${isDarkMode
+                          ? 'bg-gray-800 border-gray-700 text-gray-200 focus:border-green-500 focus:ring-green-500'
+                          : 'bg-white border-gray-300 text-gray-900 focus:border-blue-500 focus:ring-blue-500'
+                          }`}
+                      />
+                    );
+                  }
                   if (field.type === 'date') {
                     return (
                       <input
