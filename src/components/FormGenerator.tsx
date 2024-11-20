@@ -46,10 +46,10 @@ const FormPreview: React.FC<FormPreviewProps> = ({ schema }) => {
     >
       <div
         style={{ backgroundColor: isDarkMode ? '#006A4E' : '#006A4E', padding: '20px' }}
-        className={`${isDarkMode ? 'text-gray-200' : 'text-white'}`}
+        className={`${isDarkMode ? 'text-gray-200 w-full' : 'text-white w-full'}`}
       >
         <div className='flex justify-between'>
-          <div>
+          <div className=' overflow-hidden '>
             <h2 className="text-2xl font-bold mb-2">{schema.formTitle}</h2>
             <p className="mb-6">{schema.formDescription}</p>
           </div>
@@ -66,7 +66,7 @@ const FormPreview: React.FC<FormPreviewProps> = ({ schema }) => {
               <img
                 src={isDarkMode ? "/light-mode.png" : "/night-mode.png"} // Correct path from the 'public' folder
                 alt={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
-                className="w-8 h-8" // Adjust size as needed
+                className="w-6 h-6 fixed" // Adjust size as needed
               />
             </a>
           </div>
@@ -75,7 +75,7 @@ const FormPreview: React.FC<FormPreviewProps> = ({ schema }) => {
         </div>
       </div>
 
-      <div className="w-full max-w-2xl mx-auto p-4 shadow-md rounded-lg">
+      <div className="w-full mx-auto p-4 shadow-md rounded-lg">
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           {schema.fields.map((field) => (
