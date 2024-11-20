@@ -99,7 +99,6 @@ const App = () => {
       ref={containerRef}
       className="w-full h-screen flex flex-col md:flex-row relative"
     >
-      {/* JSON Editor Section */}
       <div
         className="bg-gray-800 overflow-y-auto"
         style={{
@@ -109,8 +108,6 @@ const App = () => {
       >
         <JsonEditor onSchemaChange={handleSchemaChange} />
       </div>
-
-      {/* Divider for resizing */}
       <div
         className={`bg-gray-600 hover:bg-gray-400 ${
           isSmallScreen ? 'cursor-row-resize h-2 w-full' : 'cursor-col-resize w-2 h-full'
@@ -118,8 +115,7 @@ const App = () => {
         onMouseDown={() => setIsDragging(true)}
         onTouchStart={() => setIsDragging(true)}
       ></div>
-
-      {/* Form Section */}
+      
       <div
         className="bg-gray-800 overflow-y-auto"
         style={{

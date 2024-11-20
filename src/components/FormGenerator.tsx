@@ -23,9 +23,9 @@ interface FormPreviewProps {
 
 const FormPreview: React.FC<FormPreviewProps> = ({ schema }) => {
   const { handleSubmit, control } = useForm();
-  const [isDarkMode, setIsDarkMode] = useState(false); // Dark mode state
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-  const toggleDarkMode = () => setIsDarkMode(!isDarkMode); // Toggle function
+  const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
 
   if (!schema) {
     return (
@@ -54,7 +54,6 @@ const FormPreview: React.FC<FormPreviewProps> = ({ schema }) => {
               <h2 className="text-2xl font-bold mb-2">{schema.formTitle}</h2>
               <p className="mb-6">{schema.formDescription}</p>
             </div>
-            {/* Dark Mode Toggle */}
             <div className="flex justify-end mb-16 px-2">
               <button
                 onClick={(e) => {
@@ -120,7 +119,6 @@ const FormPreview: React.FC<FormPreviewProps> = ({ schema }) => {
                   defaultValue=""
                   rules={{ required: field.required }}
                   render={({ field: controllerField }) => {
-                    // Input types
                     if (field.type === 'text' || field.type === 'email' || field.type === 'password' || field.type === 'number') {
                       return (
                         <input
